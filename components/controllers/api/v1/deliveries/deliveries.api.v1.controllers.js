@@ -29,6 +29,10 @@ router.route('/:id')
     (req, res, next) => handler(getValidator, req, res, next, validations['getOne']),
     (req, res, next) => responses(deliveriesCommonServices.findOne, req, res, next))
 
+router.route('/filter/')
+  .post(
+    (req, res, next) => handler(getValidator, req, res, next, validations['filterGet']),
+    (req, res, next) => responses(deliveriesCommonServices.filter, req, res, next));   
 
 // export
 module.exports = router

@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "eb4065d3-e8b9-4a2a-b8db-904a1dc8f664",
+		"_postman_id": "54e35830-d4f4-4d28-ab34-7d4311238f13",
 		"name": "challenge_v1",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -13,8 +13,26 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": "http://localhost:4000/api/v1/deliveries/6091816209c2c702f45b6ebb"
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/deliveries [FILTER]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateFrom\": \"2022-04-12T00:01:00.000Z\",\r\n    \"dateTo\": \"2021-04-14T00:01:00.000Z\",\r\n    \"weight\": 15000,\r\n    \"page\": 1,\r\n    \"limit\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:4000/api/v1/deliveries/6091816209c2c702f45b6ebb",
+							"raw": "http://localhost:4000/api/v1/deliveries/filter",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -24,7 +42,34 @@
 								"api",
 								"v1",
 								"deliveries",
-								"6091816209c2c702f45b6ebb"
+								"filter"
+							],
+							"query": [
+								{
+									"key": "dateFrom",
+									"value": "2021-01-05T00:01:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "dateTo",
+									"value": "2021-06-05T00:01:00.000Z",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "15000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -76,20 +121,15 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:4000/api/v1/deliveries/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"api",
-								"v1",
-								"deliveries",
-								""
-							]
-						}
+						"url": "http://localhost:4000/api/v1/deliveries/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -140,20 +180,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:4000/public/web/tracking/6091816209c2c702f45b6ebb",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4000",
-							"path": [
-								"public",
-								"web",
-								"tracking",
-								"6091816209c2c702f45b6ebb"
-							]
-						}
+						"url": "http://localhost:4000/public/web/tracking/6091816209c2c702f45b6ebb"
 					},
 					"response": []
 				}

@@ -30,4 +30,11 @@ export default {
   'getOne': Joi.object({
     "id": Joi.string().alphanum().min(24).max(24),
   }),
+  'filterGet': Joi.object({
+    "dateFrom": Joi.string().isoDate().required(),
+    "dateTo": Joi.string().isoDate().required(),
+    "weight": Joi.number().optional(),
+    "page": Joi.number().optional(),
+    "limit": Joi.number().optional(),
+  }), 
 }
